@@ -43,3 +43,5 @@ class GPUInterface
         const int kernelSize
     );
 };
+
+#endif
