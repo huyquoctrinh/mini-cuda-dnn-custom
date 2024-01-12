@@ -1,6 +1,6 @@
 #include <cmath>
 #include <iostream>
-#include "gpu-new-forward.h"
+#include "gpuForward.h"
 
 #define M_CONST 16
 #define C_CONST 4
