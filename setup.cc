@@ -39,7 +39,7 @@ Network createNetwork_CPU(bool customCPUConv)
   dnn.add_loss(loss);
 
   //load weights
-  dnn.load_model("./build/model.bin");
+  dnn.load_model("./build/cpu-train-weights.bin");
 
   return dnn;
 }
@@ -81,7 +81,7 @@ Network createNetwork_GPU()
   dnn.add_loss(loss);
 
   //load weights
-  dnn.load_model("./build/model.bin");
+  dnn.load_model("./build/cpu-train-weights.bin");
 
   return dnn;
 }
