@@ -201,7 +201,7 @@ __host__ void GPUInterface::conv_forward_gpu_prolog(
     const int H_out = dimensionHeight - kernelSize + 1;
     const int W_out = dimensionWeight - kernelSize + 1;
 
-    nt inputSize  = batch_size * inputFeatureMapsQuantity * dimensionHeight * dimensionWeight * sizeof(float); 
+    int inputSize  = batch_size * inputFeatureMapsQuantity * dimensionHeight * dimensionWeight * sizeof(float); 
     int outputSize = batch_size * outputFeatureMapsQuantity * H_out * W_out * sizeof(float);
     int maskSize = outputFeatureMapsQuantity * inputFeatureMapsQuantity * kernelSize * kernelSize * sizeof(float);
 
@@ -233,7 +233,7 @@ __host__ void GPUInterface::conv_forward_gpu(
     const int H_out = dimensionHeight - kernelSize + 1;
     const int W_out = dimensionWeight - kernelSize + 1;
 
-    if (C == 1) {
+    if (inputFeatureMapsQuantity == 1) {
     int H_grid = ceil(float(H_out) / TILE_WIDTH_C1);
     int W_grid = ceil(float(W_out) / TILE_WIDTH_C1); 
         int Z = H_grid * W_grid;
