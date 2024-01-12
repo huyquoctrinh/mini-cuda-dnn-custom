@@ -1,5 +1,5 @@
-#ifndef SRC_LAYER_GPU_FORWARD_H
-#define SRC_LAYER_GPU_FORWARD_H
+#ifndef SRC_LAYER_GPUFORWARD_H
+#define SRC_LAYER_GPUFORWARD_H
 
 class GPUInterface
 {
@@ -43,3 +43,5 @@ class GPUInterface
         const int kernelSize
     );
 };
+
+#endif
